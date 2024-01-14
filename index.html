@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca</title>
+
+    <!-- Use a versão compatível com CommonJS dos scripts Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/9.5.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.5.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+
+    <form id="registrationForm">
+        <h2>Registrar Empréstimo</h2>
+        Funcionário:<input type="text" id="funcionario">
+        Cliente:<input type="text" id="cliente">
+        Livro:<input type="text" id="livro">
+        <button type="button" onclick="registrarEmprestimo()">Registrar Empréstimo</button>
+    </form>
+
+    <form id="customerForm">
+        <h2>Registrar Cliente</h2>
+        Nome:<input type="text" id="nomeCliente">
+        CPF:<input type="text" id="cpfCliente">
+        Telefone:<input type="text" id="telefoneCliente">
+        Email:<input type="text" id="emailCliente">
+        Residência:<input type="text" id="residenciaCliente">
+        <button type="button" onclick="registrarCliente()">Registrar Cliente</button>
+    </form>
+
+    <script>
+        const firebaseConfig = {
+    apiKey: "AIzaSyDxIcGHc8vNTQOtA86VEzzmXmeYnogEFk8",
+    authDomain: "biblioteca-c1700.firebaseapp.com",
+    projectId: "biblioteca-c1700",
+    storageBucket: "biblioteca-c1700.appspot.com",
+    messagingSenderId: "181699843393",
+    appId: "1:181699843393:web:205a67ce31a92b53897dc0",
+    measurementId: "G-ZBD7GTLBQQ"
+        };
+
+        // Inicialize o Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        // Inicialize o Firestore
+        const db = firebase.firestore();
+
+        function registrarEmprestimo() {
+            const funcionario = document.getElementById('funcionario').value;
+            const cliente = document.getElementById('cliente').value;
+            const livro = document.getElementById('livro').value;
+
+            // Adicione os dados ao Firestore
+            db.collection('emprestimos').add({
+                funcionario: funcionario,
+                cliente: cliente,
+                livro: livro,
+                dataEmprestimo: new Date(),
+            });
+
+            alert('Empréstimo registrado com sucesso!');
+        }
+
+        function registrarCliente() {
+            const nomeCliente = document.getElementById('nomeCliente').value;
+            const cpfCliente = document.getElementById('cpfCliente').value;
+            const telefoneCliente = document.getElementById('telefoneCliente').value;
+            const emailCliente = document.getElementById('emailCliente').value;
+            const residenciaCliente = document.getElementById('residenciaCliente').value;
+
+            // Adicione os dados ao Firestore
+            db.collection('clientes').add({
+                nome: nomeCliente,
+                cpf: cpfCliente,
+                telefone: telefoneCliente,
+                email: emailCliente,
+                residencia: residenciaCliente,
+            });
+
+            alert('Cliente registrado com sucesso!');
+        }
+    </script>
+
+</body>
+</html>
