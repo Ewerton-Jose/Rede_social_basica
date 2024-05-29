@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>O livro do coleguinha</h1>
+    </header>
+
+    <form class="border center-block" action="" method="post">
+        <div class="form-group">
+            <label for="email_user">Nome de Usuário: </label>
+            <input class="form-control" type="email" id="email_user"> <br>
+        </div>
+        <div class="form-group">
+            <label for="key_user">Senha: </label>
+            <input type="password" class="form-control" id="key_user"> <br>
+        </div>
+        
+        <button class="btn btn-primary" type="button" onclick="verificacao()">Login</button>
+    </form>
+
+    <!---Aqui comceça os scripts-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/9.5.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.5.0/firebase-auth-compat.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/9.5.0/firebase-firestore-compat.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
+    <script >
+
+
+        function verificacao() {
+
+            var email = window.document.getElementById("email_user").value;
+            var senha = window.document.getElementById("key_user").value;
+
+            console.log(email, senha)
+
+            firebase.auth().signInWithEmailAndPassword(email, senha).then(response => {
+                console.log("Deu certo", response)
+            }).catch(error => {
+                console.log("Error", error)
+            })
+
+        };
+        
+        const firebaseConfig = {
+      
+          apiKey: "AIzaSyDxIcGHc8vNTQOtA86VEzzmXmeYnogEFk8",
+      
+          authDomain: "biblioteca-c1700.firebaseapp.com",
+      
+          projectId: "biblioteca-c1700",
+      
+          storageBucket: "biblioteca-c1700.appspot.com",
+      
+          messagingSenderId: "181699843393",
+      
+          appId: "1:181699843393:web:205a67ce31a92b53897dc0",
+      
+          measurementId: "G-ZBD7GTLBQQ"
+      
+        };
+      
+      
+        // Initialize Firebase
+
+        firebase.initializeApp(firebaseConfig);
+
+      </script>
+</body>
+</html>
