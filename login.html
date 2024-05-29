@@ -36,18 +36,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
     <script >
 
+        
 
         function verificacao() {
 
             var email = window.document.getElementById("email_user").value;
             var senha = window.document.getElementById("key_user").value;
 
-            console.log(email, senha)
-
             firebase.auth().signInWithEmailAndPassword(email, senha).then(response => {
-                console.log("Deu certo", response)
+                window.location.href = "home.html";
             }).catch(error => {
-                console.log("Error", error)
+                window.alert(error.code)
             })
 
         };
@@ -74,6 +73,12 @@
         // Initialize Firebase
 
         firebase.initializeApp(firebaseConfig);
+
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                window.location.href = "home.html";
+            }
+        })
 
       </script>
 </body>
