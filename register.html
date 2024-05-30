@@ -18,8 +18,8 @@
             <input class="form-control" type="email" id="email_user"> <br>
         </div>
         <div class="form-group">
-            <label for="email_user">Nome de Usuário: </label>
-            <input class="form-control" type="email" id="email_user"> <br>
+            <label for="nome">Nome de Usuário: </label>
+            <input class="form-control" type="email" id="nome"> <br>
         </div>
         <div class="form-group">
             <label for="key_user">Senha: </label>
@@ -27,9 +27,26 @@
         </div>
         
         <button class="btn btn-primary" type="button" onclick="registro()">Registrar</button>
-        <a href="login.html">Fazer  login</a>
-    </form>
-   
+        <a style="padding-left: 10px;" href="login.html">Fazer  login</a>
 
+    </form>
+
+    <script src="https://www.gstatic.com/firebasejs/9.5.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.5.0/firebase-auth-compat.js"></script>
+
+    <script src="conect.js"></script>
+    <script>
+        function registro(){
+
+            var email = document.getElementById("email_user").value;
+            var senha = document.getElementById("key_user").value;
+            var nome = document.getElementById("nome").value;
+
+            firebase.auth().createUserWithEmailAndPassword(email, senha).then(() => {
+                window.location.href = 'home.html'
+            }).cath(error => {alert(error);})
+
+        }
+    </script>
 </body>
 </html>
