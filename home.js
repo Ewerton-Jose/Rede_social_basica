@@ -27,11 +27,13 @@ document.addEventListener("DOMContentLoaded", function(){
     })
 })
 
+//Sair da conta
 function sair(){
     firebase.auth().signOut().then(() => {
         window.location.href = "login.html";
     })
 }
+
 
 //Achando o conteúdo no Firestore e printando
 function acharConteudo() {
@@ -41,7 +43,32 @@ function acharConteudo() {
   .then(snapshot => {
       const pessoas = snapshot.docs.map(doc => doc.data());
       pessoas.forEach(pessoa => {
-      escrever.innerHTML += (pessoa.uid)
+      escrever.innerHTML += `<div class="card mb-3" style="max-width: 540px; margin: 30px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="${pessoa.foto}" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">${pessoa.titulo}</h5>
+            <p class="card-text">${pessoa.desc}</p>
+            <div class="nota">
+              média: ${pessoa.avaliacao} <br>
+              <label for="exampleFormControlSelect1">Vote neste comentário</label>
+              <select class="form-control" style="width: 50px;" id="exampleFormControlSelect1">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+              </select>
+              <button >Enviar</button>
+            </div>
+            <p class="card-text"><small class="text-muted">Last updated ${pessoa.criacao} ago por @nome_user </small></p>
+          </div>
+        </div>
+      </div>
+    </div>`;
       });
     })
   }
