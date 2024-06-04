@@ -43,10 +43,3 @@ function verificacao() {
 
 };
 
-
-//Faz o o logout
-function sair(){
-    firebase.auth().signOut().then(() => {
-        window.location.href = "login.html";
-    })
-}
