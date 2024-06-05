@@ -1,18 +1,35 @@
 header {
+  font-family: "Times New Roman", Times, serif;
+}
+
+.basico header {
   margin: auto;
   text-align: center;
   font-family: cursive;
   margin-top: 10px;
 }
-header h1 {
+.basico h1 {
   text-align: center;
   margin-top: 250px;
   font-size: 40px;
   margin-bottom: 10px;
 }
-
-form {
+.basico form {
   max-width: 400px;
   margin: auto;
   padding: 20px;
+}
+
+#form_post {
+  max-width: 800px;
+  margin: auto;
+  margin-top: 20px;
+  padding: 20px;
+}
+#form_post textarea {
+  border-color: black;
+}
+#form_post label, #form_post input {
+  margin-bottom: 5px;
+  margin-left: 5px;
 }/*# sourceMappingURL=style.css.map */

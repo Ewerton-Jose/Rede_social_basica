@@ -23,10 +23,16 @@ firebase.initializeApp(firebaseConfig);
 document.addEventListener("DOMContentLoaded", function(){
     firebase.auth().onAuthStateChanged((usuario) => {
         if(usuario) {
-            console.log('usuario', usuario);
+            console.log(usuario)
         } else {
             window.alert("Não Há usuário logado");
             window.location.href = "login.html";
         }
     })
 })
+
+function sair(){
+    firebase.auth().signOut().then(() => {
+        window.location.href = "login.html";
+    })
+}

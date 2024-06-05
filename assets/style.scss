@@ -1,8 +1,18 @@
 header {
-    margin: auto;
-    text-align: center;
-    font-family: cursive;
-    margin-top: 10px;
+
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+
+.basico {
+        
+    header {
+        margin: auto;
+        text-align: center;
+        font-family: cursive;
+        margin-top: 10px;
+    }
+    
 
     h1 {
         text-align: center;
@@ -10,14 +20,28 @@ header {
         font-size: 40px;
         margin-bottom: 10px;
     }
+
+    form {
+        max-width: 400px;
+        margin: auto;
+        padding: 20px;
+        
+    }
 }
 
 
 
-form {
-    max-width: 400px;
-    margin: auto;
+#form_post {
+    max-width: 800px;
+    margin: auto; margin-top: 20px;
     padding: 20px;
 
-    
+    textarea {
+        border-color: black;
+    }
+
+    label, input {
+        margin-bottom: 5px; 
+        margin-left: 5px;
+    }
 }
