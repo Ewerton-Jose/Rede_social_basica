@@ -14,7 +14,16 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-
+document.addEventListener("DOMContentLoaded", function(){
+    firebase.auth().onAuthStateChanged((usuario) => {
+        if(usuario) {
+            console.log(usuario)
+        } else {
+            window.alert("Não Há usuário logado");
+            window.location.href = "login.html";
+        }
+    })
+})
 
 function sair(){
     firebase.auth().signOut().then(() => {
@@ -22,3 +31,25 @@ function sair(){
     })
 }
 
+function publicar(){
+    //verificar na pag perfil com .email
+    const conteudo = {
+        
+        avaliacao: 4,
+        desc: "1",//document.getElementById("desc").value,
+        foto: "2",//document.getElementById("foto").value,
+        titulo: "3",//document.getElementById("titulo").value,
+        uid: firebase.auth().currentUser.uid
+    }
+
+    
+    firebase.firestore().collection("conteudo").add(conteudo)
+    .then(() => {
+        console.log("Documento adicionado com sucesso.");
+    })
+    .catch((error) => {
+        console.error("Erro ao adicionar documento: ", error);
+        alert("Erro ao adicionar documento: " + error.message);
+    });
+
+}

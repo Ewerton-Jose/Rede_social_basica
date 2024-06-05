@@ -36,12 +36,12 @@
         <main>
             <form id="form_post" class="border border-primary" action="">
                 <label for="titulo">Titulo do post: </label>
-                <input type="text" name="titulo" maxlength="250"> <br>
+                <input type="text" name="titulo" id="titulo" maxlength="250"> <br>
                 <label for="desc">Descrição</label>
                 <textarea name="desc" class="form-control" id="desc"></textarea> <br>
-                <label for="foto">Link da foto</label> <input name="foto" type="text"> <br>
-                <label for="avaliacao">Sua nota: </label> <input min="1" max="5" type="number" name="avaliacao"> <br>
-                <button class="btn btn-success">Publicar</button>
+                <label for="foto">Link da foto</label> <input id="foto" name="foto" type="text"> <br>
+                <label for="avaliacao">Sua nota: </label> <input min="1" max="5" id="nota" type="number" name="avaliacao"> <br>
+                <button class="btn btn-success" onclick="publicar()">Publicar</button>
             </form>
         </main>
 
