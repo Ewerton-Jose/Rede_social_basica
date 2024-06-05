@@ -36,10 +36,11 @@ function publicar(){
     const conteudo = {
         
         avaliacao: 4,
-        desc: "1",//document.getElementById("desc").value,
-        foto: "2",//document.getElementById("foto").value,
-        titulo: "3",//document.getElementById("titulo").value,
-        uid: firebase.auth().currentUser.uid
+        desc: document.getElementById("desc").value,
+        foto: document.getElementById("foto").value,
+        titulo: document.getElementById("titulo").value,
+        uid: firebase.auth().currentUser.uid,
+        email: firebase.auth().currentUser.email
     }
 
     

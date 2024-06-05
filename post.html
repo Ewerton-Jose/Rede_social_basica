@@ -36,11 +36,11 @@
         <main>
             <form id="form_post" class="border border-primary" action="">
                 <label for="titulo">Titulo do post: </label>
-                <input type="text" name="titulo" id="titulo" maxlength="250"> <br>
+                <input type="text" name="titulo" id="titulo" placeholder="Amei a nova música de Gil" maxlength="250"> <br>
                 <label for="desc">Descrição</label>
-                <textarea name="desc" class="form-control" id="desc"></textarea> <br>
-                <label for="foto">Link da foto</label> <input id="foto" name="foto" type="text"> <br>
-                <label for="avaliacao">Sua nota: </label> <input min="1" max="5" id="nota" type="number" name="avaliacao"> <br>
+                <textarea placeholder="Eu sinceramente não tenho nada a reclamar, amei e recomendo para vocês" name="desc" class="form-control" id="desc"></textarea> <br>
+                <label for="foto">Link da foto</label> <input placeholder="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Gilberto_Gil_%285142820705%29_%28cropped%29.jpg/250px-Gilberto_Gil_%285142820705%29_%28cropped%29.jpg" id="foto" name="foto" type="text"> <br>
+                <label  for="avaliacao">Ponha digitos aleatório: </label> <input value="pp" placeholder="ksjd88" id="nota" type="number" name="avaliacao"> <br>
                 <button class="btn btn-success" onclick="publicar()">Publicar</button>
             </form>
         </main>
