@@ -54,7 +54,7 @@ function acharConteudo() {
             <p class="card-text">${pessoa.desc}</p>
             <div class="nota">
             </div>
-            <p class="card-text"><small class="text-muted">${firebase.auth().currentUser.email} </small></p>
+            <p class="card-text"><small class="text-muted">${pessoa.email} </small></p>
           </div>
         </div>
       </div>
