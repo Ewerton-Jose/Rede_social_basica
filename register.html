@@ -9,7 +9,7 @@
 </head>
 <body class="basico">
     <header>
-        <h1>O livro do coleguinha</h1>
+        <h1>Opinião</h1>
     </header>
 
     <form class="border center-block" action="" method="post">
@@ -31,10 +31,25 @@
 
     </form>
 
-    <script src="https://www.gstatic.com/firebasejs/9.5.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.5.0/firebase-auth-compat.js"></script>
 
+
     <script>
+        const firebaseConfig = {
+    apiKey: "AIzaSyDxIcGHc8vNTQOtA86VEzzmXmeYnogEFk8",
+    authDomain: "biblioteca-c1700.firebaseapp.com",
+    projectId: "biblioteca-c1700",
+    storageBucket: "biblioteca-c1700.appspot.com",
+    messagingSenderId: "181699843393",
+    appId: "1:181699843393:web:205a67ce31a92b53897dc0",
+    measurementId: "G-ZBD7GTLBQQ"
+};
+
+// Inicialize o Firebase
+firebase.initializeApp(firebaseConfig);
+
         function registro(){
 
             var email = document.getElementById("email_user").value;

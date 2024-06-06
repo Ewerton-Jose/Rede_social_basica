@@ -1,5 +1,7 @@
-<h1>O livro do coleguinha</h1>
+<h1>Opinião</h1>
 
-<p>Criar um site para compartilhar resenhas, livros(doar ou emprestar), ideas e comentar sobre elas de forma ácida ou não </p>
+<img width="40px;" src="https://cdn.pixabay.com/photo/2016/12/21/13/59/hand-1923005_1280.png" alt="logo">
 
-[Flex Grid](https://www.figma.com/board/rx6BU20X7yRcqvDTYyDA3u/Untitled?node-id=0-1&t=nGjN4L74UKl5vDhQ-1)
+<p>O objetivo é ser uma rede social onde todo mundo compartilha apenas sua sincera opinião</p>
+
+<p>V 0.8</p>

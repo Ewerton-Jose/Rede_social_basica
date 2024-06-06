@@ -53,18 +53,8 @@ function acharConteudo() {
             <h5 class="card-title">${pessoa.titulo}</h5>
             <p class="card-text">${pessoa.desc}</p>
             <div class="nota">
-              média: ${pessoa.avaliacao} <br>
-              <label for="exampleFormControlSelect1">Vote neste comentário</label>
-              <select class="form-control" style="width: 50px;" id="exampleFormControlSelect1">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-              </select>
-              <button >Enviar</button>
             </div>
-            <p class="card-text"><small class="text-muted">Last updated ${pessoa.criacao} ago por @nome_user </small></p>
+            <p class="card-text"><small class="text-muted">${firebase.auth().currentUser.email} </small></p>
           </div>
         </div>
       </div>

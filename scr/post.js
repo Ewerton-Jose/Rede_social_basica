@@ -47,6 +47,7 @@ function publicar(){
     firebase.firestore().collection("conteudo").add(conteudo)
     .then(() => {
         console.log("Documento adicionado com sucesso.");
+        window.location.href = "home.html";
     })
     .catch((error) => {
         console.error("Erro ao adicionar documento: ", error);
